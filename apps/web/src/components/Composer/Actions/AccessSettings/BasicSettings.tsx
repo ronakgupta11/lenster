@@ -1,5 +1,9 @@
 import ToggleWithHelper from '@components/Shared/ToggleWithHelper';
-import { CollectionIcon, UsersIcon } from '@heroicons/react/outline';
+import {
+  CollectionIcon,
+  ShieldCheckIcon,
+  UsersIcon
+} from '@heroicons/react/outline';
 import { CollectModules } from '@lenster/lens';
 import { Button, Card } from '@lenster/ui';
 import { t, Trans } from '@lingui/macro';
@@ -74,6 +78,15 @@ const BasicSettings: FC<BasicSettingsProps> = ({ setShowModal }) => {
               heading={t`Followers can view`}
               description={t`People need to follow you to be able to view it`}
               icon={<UsersIcon className="h-4 w-4" />}
+            />
+          </Card>
+          <Card className="mt-5 p-5">
+            <ToggleWithHelper
+              on={followToView}
+              setOn={() => setFollowToView(!followToView)}
+              heading={t`Subscribers can view`}
+              description={t`People need to subscribe to you to be able to view it`}
+              icon={<ShieldCheckIcon className="h-4 w-4" />}
             />
           </Card>
         </>

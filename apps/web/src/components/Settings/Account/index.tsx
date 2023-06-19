@@ -12,6 +12,7 @@ import { useEffectOnce } from 'usehooks-ts';
 
 import SettingsSidebar from '../Sidebar';
 import SetProfile from './SetProfile';
+import Subscribe from './Subscribe';
 import Verification from './Verification';
 
 const AccountSettings: NextPage = () => {
@@ -34,6 +35,7 @@ const AccountSettings: NextPage = () => {
       <GridItemEight className="space-y-5">
         <SetProfile />
         <SuperFollow />
+        <Subscribe />
         <Verification />
       </GridItemEight>
     </GridLayout>

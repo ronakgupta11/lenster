@@ -2,8 +2,10 @@ import Message from '@components/Profile/Message';
 import Follow from '@components/Shared/Follow';
 import Markup from '@components/Shared/Markup';
 import Slug from '@components/Shared/Slug';
+import SubscribeUser from '@components/Shared/SubscribeUser';
 import SuperFollow from '@components/Shared/SuperFollow';
 import Unfollow from '@components/Shared/Unfollow';
+import UnSubscribeUser from '@components/Shared/UnSubscribeUser';
 import ProfileStaffTool from '@components/StaffTools/Panels/Profile';
 import { useMessageDb } from '@components/utils/hooks/useMessageDb';
 import useStaffMode from '@components/utils/hooks/useStaffMode';
@@ -212,6 +214,17 @@ const Details: FC<DetailsProps> = ({ profile, following, setFollowing }) => {
                   profile={profile}
                   setFollowing={setFollowing}
                   followUnfollowSource={FollowUnfollowSource.PROFILE_PAGE}
+                  showText
+                />
+                <SubscribeUser
+                  profile={profile}
+                  setFollowing={setFollowing}
+                  followUnfollowSource={FollowUnfollowSource.PROFILE_PAGE}
+                  showText
+                />
+                <UnSubscribeUser
+                  profile={profile}
+                  setFollowing={setFollowing}
                   showText
                 />
                 {currentProfile && <Message onClick={onMessageClick} />}

@@ -2,6 +2,7 @@ import MenuTransition from '@components/Shared/MenuTransition';
 import { Menu } from '@headlessui/react';
 import {
   GlobeAltIcon,
+  ShieldCheckIcon,
   UserAddIcon,
   UserGroupIcon,
   UsersIcon
@@ -35,6 +36,7 @@ const ReferenceSettings: FC = () => {
   const MY_FOLLOWS = t`My follows`;
   const MY_FOLLOWERS = t`My followers`;
   const FRIENDS_OF_FRIENDS = t`Friends of friends`;
+  const ONLY_SUBSCRIBERS = t`Only Subscribers`;
   const EVERYONE = t`Everyone`;
 
   const isFollowerOnlyReferenceModule =
@@ -142,6 +144,17 @@ const ReferenceSettings: FC = () => {
             title={FRIENDS_OF_FRIENDS}
             selected={isFriendsOfFriends}
             icon={<UserGroupIcon className="h-4 w-4" />}
+            onClick={() => {
+              setSelectedReferenceModule(
+                ReferenceModules.DegreesOfSeparationReferenceModule
+              );
+              setDegreesOfSeparation(2);
+            }}
+          />
+          <Module
+            title={ONLY_SUBSCRIBERS}
+            selected={isFriendsOfFriends}
+            icon={<ShieldCheckIcon className="h-4 w-4" />}
             onClick={() => {
               setSelectedReferenceModule(
                 ReferenceModules.DegreesOfSeparationReferenceModule
